@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:get/get.dart';
 
 class Dimensions {
@@ -28,4 +30,9 @@ class Dimensions {
   // icon size
 
   static double iconSize24 = screenHeight / 34.17;
+
+// list view size
+
+  static double ListViewImgSize = screenWidth / 3.25;
+  static double ListViewTextContSize = screenWidth / 3.9;
 }

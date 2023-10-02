@@ -89,8 +89,36 @@ class _FoodPageBodyState extends State<FoodPageBody> {
               Container(
                 margin: EdgeInsets.only(bottom: 2),
                 child: SmallText(text: "Food pairing"),
-              )
+              ),
             ],
+          ),
+        ),
+
+        Container(
+          height: 700,
+          child: ListView.builder(
+            physics: NeverScrollableScrollPhysics(),
+            itemCount: 10,
+            itemBuilder: (context, index) {
+              return Container(
+                margin: EdgeInsets.only(
+                    left: Dimensions.width20, right: Dimensions.width20),
+                child: Row(
+                  children: [
+                    Container(
+                      width: 120,
+                      height: 120,
+                      decoration: BoxDecoration(
+                          borderRadius:
+                              BorderRadius.circular(Dimensions.radius20),
+                          color: Colors.white38,
+                          image: DecorationImage(
+                              image: AssetImage("assets/image/food2.png"))),
+                    )
+                  ],
+                ),
+              );
+            },
           ),
         )
       ],
@@ -131,11 +159,13 @@ class _FoodPageBodyState extends State<FoodPageBody> {
             margin: EdgeInsets.only(
                 left: Dimensions.width10, right: Dimensions.width10),
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(Dimensions.radius30),
-                color: index.isEven ? Color(0xFF69c5df) : Color(0xFF9294cc),
-                image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: AssetImage("assets/image/food1.png"))),
+              borderRadius: BorderRadius.circular(Dimensions.radius30),
+              color: index.isEven ? Color(0xFF69c5df) : Color(0xFF9294cc),
+              image: DecorationImage(
+                fit: BoxFit.cover,
+                image: AssetImage("assets/image/food1.png"),
+              ),
+            ),
           ),
           Align(
             alignment: Alignment.bottomCenter,
@@ -218,3 +248,36 @@ class _FoodPageBodyState extends State<FoodPageBody> {
     );
   }
 }
+
+
+//  Container(
+//           height: 900,
+//           child: ListView.builder(
+//             physics: NeverScrollableScrollPhysics(),
+//             shrinkWrap: true,
+//             itemCount: 10,
+//             itemBuilder: (context, index) {
+//               return Container(
+//                 margin: EdgeInsets.only(
+//                     left: Dimensions.screenWidth, right: Dimensions.width20),
+//                 child: Row(
+//                   children: [
+//                     Container(
+//                       color: Colors.red,
+//                       width: 120,
+//                       height: 120,
+//                       decoration: BoxDecoration(
+//                         borderRadius:
+//                             BorderRadius.circular(Dimensions.radius20),
+//                         // color: Colors.white38,
+//                         image: DecorationImage(
+//                           image: AssetImage("assets/image/food1.png"),
+//                         ),
+//                       ),
+//                     ),
+//                   ],
+//                 ),
+//               );
+//             },
+//           ),
+//         ),

@@ -3,6 +3,7 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:food/widget/app_column.dart';
 import 'package:food/widget/big_text.dart';
 import 'package:food/widget/icon_and_text_widget.dart';
 import 'package:food/widget/small_text.dart';
@@ -241,57 +242,8 @@ class _FoodPageBodyState extends State<FoodPageBody> {
               child: Container(
                 padding: EdgeInsets.only(
                     top: Dimensions.height15, left: 15, right: 15),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    BigText(text: "Chinese Side"),
-                    SizedBox(
-                      height: Dimensions.height10,
-                    ),
-                    Row(
-                      children: [
-                        Wrap(
-                          children: List.generate(5, (index) {
-                            return Icon(
-                              Icons.star,
-                              color: Colors.black,
-                              size: 15,
-                            );
-                          }),
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        SmallText(text: "4.5"),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        SmallText(text: "1278"),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        SmallText(text: "comments"),
-                      ],
-                    ),
-                    SizedBox(height: Dimensions.height20),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        IconAndTextWidget(
-                            icon: Icons.circle_sharp,
-                            text: "Normal",
-                            iconColor: Colors.amber),
-                        IconAndTextWidget(
-                            icon: Icons.location_on,
-                            text: "1.7km",
-                            iconColor: Colors.black),
-                        IconAndTextWidget(
-                            icon: Icons.access_time,
-                            text: "32min",
-                            iconColor: Colors.amberAccent),
-                      ],
-                    ),
-                  ],
+                child: AppColumn(
+                  text: "Delhi Darbaar",
                 ),
               ),
             ),
@@ -301,35 +253,3 @@ class _FoodPageBodyState extends State<FoodPageBody> {
     );
   }
 }
-
-//  Container(
-//           height: 900,
-//           child: ListView.builder(
-//             physics: NeverScrollableScrollPhysics(),
-//             shrinkWrap: true,
-//             itemCount: 10,
-//             itemBuilder: (context, index) {
-//               return Container(
-//                 margin: EdgeInsets.only(
-//                     left: Dimensions.screenWidth, right: Dimensions.width20),
-//                 child: Row(
-//                   children: [
-//                     Container(
-//                       color: Colors.red,
-//                       width: 120,
-//                       height: 120,
-//                       decoration: BoxDecoration(
-//                         borderRadius:
-//                             BorderRadius.circular(Dimensions.radius20),
-//                         // color: Colors.white38,
-//                         image: DecorationImage(
-//                           image: AssetImage("assets/image/food1.png"),
-//                         ),
-//                       ),
-//                     ),
-//                   ],
-//                 ),
-//               );
-//             },
-//           ),
-//         ),

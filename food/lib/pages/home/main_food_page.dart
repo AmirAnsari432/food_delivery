@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers
 
 import 'package:flutter/material.dart';
-import 'package:food/home/food_page_body.dart';
+import 'package:food/pages/home/food_page_body.dart';
 import 'package:food/utils/dimensions.dart';
 import 'package:food/widget/big_text.dart';
 import 'package:food/widget/small_text.dart';

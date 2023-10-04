@@ -34,8 +34,9 @@ class _RecommendedFoodDetailState extends State<RecommendedFoodDetail> {
             bottom: PreferredSize(
                 child: Container(
                   child: Center(
-                      child: BigText(
-                          size: Dimensions.font26, text: "Delhi Darbaar")),
+                    child: BigText(
+                        size: Dimensions.font26, text: "Spicy Non-veg Burger"),
+                  ),
                   width: double.maxFinite,
                   padding: EdgeInsets.only(top: 5, bottom: 10),
                   decoration: BoxDecoration(
@@ -109,8 +110,8 @@ class _RecommendedFoodDetailState extends State<RecommendedFoodDetail> {
           Container(
             height: Dimensions.bottomHeightBar,
             padding: EdgeInsets.only(
-              top: Dimensions.height30,
-              bottom: Dimensions.height30,
+              top: Dimensions.height20,
+              bottom: Dimensions.height20,
               left: Dimensions.width20,
               right: Dimensions.width20,
             ),
@@ -122,7 +123,7 @@ class _RecommendedFoodDetailState extends State<RecommendedFoodDetail> {
               ),
             ),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
                   padding: EdgeInsets.only(
@@ -136,6 +137,7 @@ class _RecommendedFoodDetailState extends State<RecommendedFoodDetail> {
                   child: Icon(
                     Icons.favorite,
                     color: AppColor.mainColor,
+                    size: 40,
                   ),
                 ),
                 Container(
@@ -146,6 +148,7 @@ class _RecommendedFoodDetailState extends State<RecommendedFoodDetail> {
                   child: BigText(
                     text: "\$10 | Add to cart",
                     color: Colors.white,
+                    size: Dimensions.font20,
                   ),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(Dimensions.radius20),

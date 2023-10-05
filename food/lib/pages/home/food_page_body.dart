@@ -3,11 +3,14 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:food/controller/popular_product_controller.dart';
+import 'package:food/utils/color.dart';
 import 'package:food/widget/app_column.dart';
 import 'package:food/widget/big_text.dart';
 import 'package:food/widget/icon_and_text_widget.dart';
 import 'package:food/widget/small_text.dart';
 import 'package:food/utils/dimensions.dart';
+import 'package:get/get.dart';
 
 class FoodPageBody extends StatefulWidget {
   const FoodPageBody({Key? key}) : super(key: key);
@@ -18,7 +21,7 @@ class FoodPageBody extends StatefulWidget {
 
 class _FoodPageBodyState extends State<FoodPageBody> {
   PageController pageController = PageController(viewportFraction: .85);
-  var _currPageValue = 0.0;
+  var _currPageValue = 0;
   double _scaleFactor = 0.8;
   double _height = Dimensions.pageViewContainer;
   @override
@@ -26,7 +29,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
     super.initState();
     pageController.addListener(() {
       setState(() {
-        _currPageValue = pageController.page!;
+        int _currPageValue = pageController.page!.toInt();
       });
     });
   }
@@ -41,20 +44,22 @@ class _FoodPageBodyState extends State<FoodPageBody> {
     return Column(
       children: [
         // slider section
-        Container(
-          // color: Colors.redAccent,
-          height: Dimensions.pageView,
-          child: PageView.builder(
-              controller: pageController,
-              itemCount: 5,
-              itemBuilder: (context, position) {
-                return _buildPageItem(position);
-              }),
-        ),
+        GetBuilder<PopulerProductController>(builder: (popularProducts) {
+          return Container(
+            // color: Colors.redAccent,
+            height: Dimensions.pageView,
+            child: PageView.builder(
+                controller: pageController,
+                itemCount: popularProducts.popularProductList.length,
+                itemBuilder: (context, position) {
+                  return _buildPageItem(position);
+                }),
+          );
+        }),
         // dots
         new DotsIndicator(
           dotsCount: 5,
-          position: _currPageValue.toInt(),
+          position: _currPageValue,
           decorator: DotsDecorator(
             activeColor: Colors.blueGrey,
             size: const Size.square(9.0),
@@ -63,7 +68,6 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                 borderRadius: BorderRadius.circular(5.0)),
           ),
         ),
-
         // popular text
         SizedBox(
           height: Dimensions.height30,

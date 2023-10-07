@@ -1,5 +1,4 @@
-// ignore_for_file: unnecessary_this, unused_field, unnecessary_new
-
+// ignore_for_file: unused_field
 class Product {
   int? _totalSize;
   int? _typeId;
@@ -13,10 +12,10 @@ class Product {
       required typeId,
       required offset,
       required products}) {
-    this._totalSize = totalSize;
-    this._typeId = typeId;
-    this._offset = offset;
-    this._products = products;
+    _totalSize = totalSize;
+    _typeId = typeId;
+    _offset = offset;
+    _products = products;
   }
 
   Product.fromJson(Map<String, dynamic> json) {

@@ -23,7 +23,7 @@ class PopulerProductController extends GetxController {
       _isLoaded = true;
       update();
     } else {
-      print("Could not get products revommended");
+      print("Could not get products recommended");
     }
   }
 }
